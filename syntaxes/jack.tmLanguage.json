@@ -1,0 +1,87 @@
+{
+	"name": "Jack",
+	"fileTypes": [
+		"jack"
+	],
+	"patterns": [
+		{
+			"comment": "Block comment",
+			"begin": "\\/\\*",
+			"end": "\\*\\/",
+			"name": "comment.block.jack"
+		},
+		{
+			"comment": "Line comment",
+			"begin": "\\/\\/",
+			"end": "\\n",
+			"name": "comment.line.jack"
+		},
+		{
+			"comment": "",	
+			"name": "keyword.control.jack",
+			"match": "\\b(let|if|else|while|do|return)\\b"
+		},
+		{
+			"comment": "Class declaration",	
+			"name": "storage.type.jack",
+			"match": "\\b(class)\\b"
+		},
+		{
+			"comment": "",
+			"name": "string.quoted.double.jack",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"comment": "Escape special characters with a backslash",
+					"name": "constant.character.escape.jack",
+					"match": "\\\\."
+				}
+			]
+		},
+		{
+			"comment": "Variable/property declaration",
+			"name": "storage.type.jack",
+			"match": "\\b(field|static|var)\\s+(\\w+)\\b",
+			"captures": 
+				{
+					"1": {
+						"name": "storage.modifier.jack"
+					},
+					"2": {
+						"name": "storage.type.jack"
+					}
+				}
+		},
+		{
+			"comment": "",
+			"begin": "\\b(constructor|function|method)\\s+([A-Za-z_][A-Za-z_0-9]*)\\s+([A-Za-z_][A-Za-z_0-9]*)\\s*\\(",
+			"beginCaptures": {
+				"1": {
+					"name": "storage.modifier.jack"
+				},
+				"2": {
+					"name": "storage.type.jack"
+				}
+			},
+			"end": "\\)",
+			"patterns":[
+				{
+					"match": "\\s*([A-Za-z_][A-Za-z_0-9]*)\\s+(?=[A-Za-z_][A-Za-z_0-9]*)\\b",
+					"name": "storage.type.jack"
+				}
+			]
+		},
+		{
+			"comment": "Numeric constants",
+			"name": "constant.numeric.jack",
+			"match": "\\b[0-9]+\\b"
+		},
+		{
+			"comment": "Jack constants",
+			"name": "constant.language.jack",
+			"match": "\\b(true|false|null|this)\\b"
+		}
+	],
+	"scopeName": "source.jack"
+}

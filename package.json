@@ -2,8 +2,12 @@
     "name": "jack-language-syntax-highlighting",
     "displayName": "Nand2Tetris - Jack Language Syntax Highlighting",
     "description": "Highlighting for the Jack language used in Nand2Tetris course. Syntax highlighting rules were inspired by this Sublime package: https://github.com/swarn/sublime-jack",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "amadeann",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/amadeann/nand2tetris-jack-syntax-vscode"
+    },
     "engines": {
         "vscode": "^1.16.0"
     },
@@ -11,16 +15,25 @@
         "Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "jack",
-            "aliases": ["Jack", "jack"],
-            "extensions": [".jack"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "jack",
-            "scopeName": "source.jack",
-            "path": "./syntaxes/jack.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "jack",
+                "aliases": [
+                    "Jack",
+                    "jack"
+                ],
+                "extensions": [
+                    ".jack"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "jack",
+                "scopeName": "source.jack",
+                "path": "./syntaxes/jack.tmLanguage.json"
+            }
+        ]
     }
 }
